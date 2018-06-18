@@ -8,6 +8,8 @@ Minimal starter kit with hot module replacement (HMR) for rapid development.
 ## Usage
 **Development**
 
+You have to have node, npm and yarn installed to use this project, then...
+
 `npm run start-dev`
 
 * Build app continously (HMR enabled)
