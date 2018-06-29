@@ -55,26 +55,26 @@ const BasicExample = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/topics'>Topics</Link></li>
       </ul>
 
       <hr/>
 
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+      <Route exact path='/' component={Home}/>
+      <Route path='/about' component={About}/>
+      <Route path='/topics' component={Topics}/>
     </div>
   </Router>
 )
 export default BasicExample
 
 
-// import * as React from "react";
-// import "./../assets/scss/App.scss";
+// import * as React from 'react';
+// import './../assets/scss/App.scss';
 
-// const reactLogo = require("./../assets/img/react_logo.svg");
+// const reactLogo = require('./../assets/img/react_logo.svg');
 
 // export interface AppProps {
 // }
@@ -82,10 +82,10 @@ export default BasicExample
 // export default class App extends React.Component<AppProps, undefined> {
 //     render() {
 //         return (
-//             <div className="app">
+//             <div className='app'>
 //                 <h1>Hello World!</h1>
 //                 <p>Foo to the barz</p>
-//                 <img src={reactLogo} height="480"/>
+//                 <img src={reactLogo} height='480'/>
 //             </div>
 //         );
 //     }
