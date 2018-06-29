@@ -9,9 +9,9 @@ module.exports = merge(commonConfig, {
   mode: 'production',
   entry: './index.tsx',
   output: {
-    filename: 'bundle.[hash].min.js',
+    filename: 'js/bundle.[hash].min.js',
     path: resolve(__dirname, '../../dist'),
-    publicPath: '/',
+    publicPath: 'https://jorgewebdeployment.blob.core.windows.net/etisysonline/',
   },
   devtool: 'source-map',
   plugins: [
