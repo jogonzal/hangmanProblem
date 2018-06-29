@@ -2,6 +2,7 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const commonConfig = require('./common');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(commonConfig, {
   mode: 'development',
@@ -16,6 +17,10 @@ module.exports = merge(commonConfig, {
   },
   devtool: 'cheap-module-eval-source-map',
   plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      isLocal: true
+    }),
     new webpack.HotModuleReplacementPlugin(), // enable HMR globally
     new webpack.NamedModulesPlugin(), // prints more readable module names in the browser console on HMR updates
   ],

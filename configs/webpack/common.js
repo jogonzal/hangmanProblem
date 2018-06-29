@@ -2,7 +2,6 @@
 const {resolve} = require('path');
 const {CheckerPlugin} = require('awesome-typescript-loader');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -44,8 +43,7 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
-    new StyleLintPlugin(),
-    new HtmlWebpackPlugin({template: 'index.html.ejs',}),
+    new StyleLintPlugin()
   ],
   performance: {
     hints: false,
