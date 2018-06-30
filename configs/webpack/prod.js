@@ -13,11 +13,5 @@ module.exports = merge(commonConfig, {
     path: resolve(__dirname, '../../dist'),
     publicPath: 'https://jorgewebdeployment.blob.core.windows.net/etisysonline/',
   },
-  devtool: 'source-map',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-      isLocal: false
-    })
-  ],
+  devtool: 'source-map'
 });

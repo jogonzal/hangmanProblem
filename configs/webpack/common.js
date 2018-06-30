@@ -43,7 +43,10 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
-    new StyleLintPlugin()
+    new StyleLintPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    })
   ],
   performance: {
     hints: false,
