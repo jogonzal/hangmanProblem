@@ -24,13 +24,15 @@
   "homepage": "https://github.com/vikpe/react-webpack-typescript-starter",
   "scripts": {
     "build": "npm run clean-dist && webpack -p --config=configs/webpack/prod.js",
+    "build-local-prod": "npm run clean-dist && webpack -p --config=configs/webpack/localProd.js",
     "clean-dist": "rimraf dist",
     "lint": "npm run lint:ts && npm run lint:sass",
     "lint:ts": "tslint './src/**/*.ts*' --format stylish --force",
     "lint:sass": "stylelint ./src/**/*.scss",
     "start": "npm run start-dev",
     "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
-    "start-prod": "npm run build && node express.js",
+    "start-prod": "npm run build-local-prod && node express.js",
+    "start-prod2": "webpack-dev-server --config=configs/webpack/localprod.js",
     "test": "jest --coverage --config=configs/jest.json"
   },
   "devDependencies": {

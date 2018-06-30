@@ -8,11 +8,10 @@ const reactLogo = require('./../assets/img/react_logo.svg')
 import './../assets/scss/App.scss'
 
 const Home = () => (
-  <div>
-    <h2>Home</h2>
-    <h1>Hello World!</h1>
-    <p>Foo to the barz</p>
-    <img src={reactLogo} height='480'/>
+  <div className='app'>
+      <h1>Hello World!</h1>
+      <p>Foo to the barz</p>
+      <img src={reactLogo} height='480'/>
   </div>
 )
 

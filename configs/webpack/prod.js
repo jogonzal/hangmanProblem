@@ -1,16 +1,10 @@
 // production config
 const merge = require('webpack-merge');
-const {resolve} = require('path');
 
-const commonConfig = require('./common');
+const localProdConfig = require('./localProd');
 
-module.exports = merge(commonConfig, {
-  mode: 'production',
-  entry: './index.tsx',
+module.exports = merge(localProdConfig, {
   output: {
-    filename: 'js/bundle.[hash].min.js',
-    path: resolve(__dirname, '../../dist'),
     publicPath: 'https://jorgewebdeployment.blob.core.windows.net/etisysonline/',
   },
-  devtool: 'source-map'
 });
