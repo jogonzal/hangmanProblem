@@ -3,6 +3,7 @@ const {resolve} = require('path');
 const {CheckerPlugin} = require('awesome-typescript-loader');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 module.exports = {
   resolve: {
@@ -47,9 +48,32 @@ module.exports = {
     new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html'
-    })
+    }),
+    // Get full error detail for errors caught by windows.onerror (https://blog.sentry.io/2016/05/17/what-is-script-error.html)
+    // More info: https://webpack.github.io/docs/configuration.html#output-crossoriginloading
+    // https://reactjs.org/docs/cross-origin-errors.html
+    new ScriptExtHtmlWebpackPlugin({
+      custom: [
+        {
+          test: /\.js$/,
+          attribute: 'crossorigin',
+          value: 'anonymous'
+        }
+      ]
+    }),
   ],
   performance: {
     hints: false,
   },
+  devServer: {
+    allowedHosts: [
+      '*'
+    ],
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Expose-Headers': '*'
+    }
+  }
 };
