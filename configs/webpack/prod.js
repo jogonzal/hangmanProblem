@@ -1,7 +1,6 @@
 // production config
 const merge = require('webpack-merge');
 const {resolve} = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const commonConfig = require('./common');
 
