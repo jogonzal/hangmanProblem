@@ -5,6 +5,6 @@ const localProdConfig = require('./localProd');
 
 module.exports = merge(localProdConfig, {
   output: {
-    publicPath: 'https://jorgewebdeployment.blob.core.windows.net/etisysonline/',
+    publicPath: 'https://jorgewebdeployment.blob.core.windows.net/typescriptsample/',
   },
 });
