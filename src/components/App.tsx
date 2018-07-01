@@ -3,11 +3,11 @@ const reactLogo = require('./../assets/img/react_logo.svg')
 import './../assets/scss/App.scss'
 import Clock from './Clock/Clock'
 import Toggle from './Toggle'
-import Link from './Link';
+import Link from './Link'
 
 const App = () => (
   <div className='app'>
-      <h1>Hello World!</h1>
+      <h1>React + Typescript sample!</h1>
       <p>Foo to the barz</p>
       <img src={reactLogo} height='480'/>
       <Clock input={ 'JORGE CLOCK 1' }/>
