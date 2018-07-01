@@ -36,6 +36,7 @@
     "test": "jest --coverage --config=configs/jest.json"
   },
   "devDependencies": {
+    "@types/history": "^4.6.2",
     "@types/jest": "^23.0.0",
     "@types/node": "^10.3.1",
     "@types/react": "^16.3.16",
@@ -73,6 +74,9 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@types/path-to-regexp": "^1.7.0",
+    "history": "^4.7.2",
+    "path-to-regexp": "^2.2.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",

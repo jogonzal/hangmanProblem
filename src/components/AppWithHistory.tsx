@@ -1,18 +1,7 @@
-// import * as React from 'react'
-// import {render} from 'react-dom'
-// import App from './components/App'
-
-// const rootEl = document.getElementById('root')
-
-// render(
-//     <App/>,
-//     rootEl
-// )
-
 import * as ReactDOM from 'react-dom'
-import history from './components/history'
-import router from './components/router'
-import routes from './components/routes'
+import history from './history'
+import router from './router'
+import routes from './routes'
 
 const container = document.getElementById('root')
 function renderComponent(component) {
