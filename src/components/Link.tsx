@@ -1,15 +1,15 @@
 import * as React from 'react'
-import createHistory from 'history/createBrowserHistory'
+import history from './history'
 
 export default class Link extends React.Component<{ href: string }, {}> {
     buttonClicked = (e: any) => {
-        history
+        history.push(this.props.href)
     }
 
     render() {
         return (
-            <div>
-                <button  onClick={ this.buttonClicked }/>
+            <div onClick={ this.buttonClicked } >
+                { this.props.children }
             </div>
         )
     }
