@@ -21,7 +21,9 @@ async function resolve(routes, context) {
     const result = await route.action({ ...context, params })
     if (result) return result
   }
-  const error = new Error('Not found')
-  throw error
+  console.warn(`Route ${context.pathname} not found! Returning first one`)
+  const firstRoute = routes[0]
+  const params = matchURI(firstRoute.path, context.pathname)
+  return await routes[0].action({ ...context, params })
 }
 export default { resolve }
