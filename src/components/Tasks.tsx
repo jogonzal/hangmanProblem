@@ -6,20 +6,17 @@ import Toggle from './Toggle'
 import Link from './Link'
 import NavBar from './NavBar/NavBar'
 
-const App = () => (
+const Tasks = () => (
   <div>
       <NavBar />
       <h1>React + Typescript sample!</h1>
-      <p>Foo to the barz</p>
+      <p>Foo to the barz x 2</p>
       <img src={reactLogo} height='480'/>
-      <Clock input={ 'JORGE CLOCK 1' }/>
-      <Clock input={ 'JORGE CLOCK 2' }/>
-      <Clock input={ 'JORGE CLOCK 3' }/>
+      <Clock input={ 'JORGE CLOCK 4' }/>
+      <Clock input={ 'JORGE CLOCK 5' }/>
+      <Clock input={ 'JORGE CLOCK 6' }/>
       <Toggle />
-      <Link href='/tasks' >
-        <p>Please click me!</p>
-      </Link>
   </div>
 )
 
-export default App
+export default Tasks
