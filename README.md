@@ -4,10 +4,11 @@ Problem to solve: play hangman.
 Input: Number of letters, entire corpus of possible words, positions guessed so far
 
 ## How to run
-0. `yarn`
-1. `npm run start:dev`
-2. Browse to localhost:8080
-3. That's it! Open the browser window, and you'll see somethign like this:
+0. Install yarn
+1. `yarn` (this installs dependencies)
+2. `yarn run start:dev` (this deploys the webapp)
+3. Browse to http://localhost:8080
+4. That's it! Open the browser window, and you'll see somethign like this:
 
 ![Sample image](/SampleConsoleOutput.png)
 
