@@ -9,7 +9,7 @@ export default class HangmanGameManager {
   private maxAttempts = 100 // Feel free to lower this number :)
 
   private wordToGuess: string
-  public positionsGuessedSoFar: boolean[]
+  public positionsGuessedSoFar: (string | undefined)[]
   public totalFailedGuesses: number
 
   public wordLength: number
@@ -20,7 +20,7 @@ export default class HangmanGameManager {
     this.totalFailedGuesses = 0
     this.positionsGuessedSoFar = []
     for (let i = 0; i < this.wordToGuess.length; i++) {
-      this.positionsGuessedSoFar.push(false)
+      this.positionsGuessedSoFar.push('_')
     }
 
     this.wordLength = this.wordToGuess.length
@@ -30,7 +30,8 @@ export default class HangmanGameManager {
 
   public guessCharacter(guessedCharacter: string): HangmanResult {
     const result = this.guessCharacterPrivate(guessedCharacter)
-    console.log(`[HangmanGameManager] User guessed '${guessedCharacter}'. Result: ${HangmanResult[result]} TotalFailedGuesses: ${this.totalFailedGuesses}`)
+    console.log(`[HangmanGameManager] User guessed '${guessedCharacter}'. Result: ${HangmanResult[result]} TotalFailedGuesses: ${this.totalFailedGuesses}.`)
+    console.log(this.positionsGuessedSoFar)
 
     return result
   }
@@ -46,7 +47,7 @@ export default class HangmanGameManager {
       const char = this.wordToGuess[i]
       if (char === guessedCharacter) {
         guessedSomething = true
-        this.positionsGuessedSoFar[i] = true
+        this.positionsGuessedSoFar[i] = guessedCharacter
       }
     }
 
@@ -54,7 +55,7 @@ export default class HangmanGameManager {
     let isCharacterMissing = false
     for (let i = 0; i < this.wordToGuess.length; i++) {
       const guessedIndividual = this.positionsGuessedSoFar[i]
-      if (!guessedIndividual) {
+      if (guessedIndividual === '_') {
         isCharacterMissing = true
       }
     }
