@@ -9,7 +9,7 @@ export default class HangmanGameManager {
   private maxAttempts = 100 // Feel free to lower this number :)
 
   private wordToGuess: string
-  public guessed: boolean[]
+  public positionsGuessedSoFar: boolean[]
   public totalFailedGuesses: number
 
   public wordLength: number
@@ -18,9 +18,9 @@ export default class HangmanGameManager {
     // Pick a random word
     this.wordToGuess = words[Math.floor(Math.random() * words.length)]
     this.totalFailedGuesses = 0
-    this.guessed = []
+    this.positionsGuessedSoFar = []
     for (let i = 0; i < this.wordToGuess.length; i++) {
-      this.guessed.push(false)
+      this.positionsGuessedSoFar.push(false)
     }
 
     this.wordLength = this.wordToGuess.length
@@ -46,14 +46,14 @@ export default class HangmanGameManager {
       const char = this.wordToGuess[i]
       if (char === guessedCharacter) {
         guessedSomething = true
-        this.guessed[i] = true
+        this.positionsGuessedSoFar[i] = true
       }
     }
 
     // Check if all characters have been guessed
     let isCharacterMissing = false
     for (let i = 0; i < this.wordToGuess.length; i++) {
-      const guessedIndividual = this.guessed[i]
+      const guessedIndividual = this.positionsGuessedSoFar[i]
       if (!guessedIndividual) {
         isCharacterMissing = true
       }
