@@ -13,9 +13,9 @@ Input: Number of letters, entire corpus of possible words, positions guessed so 
 
 ## So... how does this work?
 
-Take a look at HangmanGamePlayer.ts. Your goal here is to create the best strategy to win the hangman game as a player. A simple implementation that simply guesses a, b, c... until winning or losing is available. Note that this implementation is extremely has much room for improvement.
+Take a look at HangmanGamePlayer.ts - this is the only file you'll change, specifically the "playGame" method. Your goal here is to create the best strategy to win the hangman game as a player. A simple implementation that simply guesses a, b, c... until winning or losing is available. Note that this implementation has much room for improvement and doesn't make use of any information like word length, word pool, or which positions of the word it has guessed.
 
-### Input
+### Input for HangmanGamePlayer.ts
 
 1. Number of letters in the word to guess (this.hangmanGame.wordLength)
 2. Positions guessed so far (this.hangmanGame.positionsGuessedSoFar)
