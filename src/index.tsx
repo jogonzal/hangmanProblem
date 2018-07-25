@@ -1,28 +1,20 @@
-// import * as React from 'react'
-// import {render} from 'react-dom'
-// import App from './components/App'
+export const fiveLetterWordsFilePath = require('./fiveLetterWords.json')
+import HangmanGameManager from './HangmanGameManager'
+import HangmanGamePlayer from './HangmanGamePlayer'
 
-// const rootEl = document.getElementById('root')
+console.log('Game starting...')
 
-// render(
-//     <App/>,
-//     rootEl
-// )
+async function startApp() {
+  const response = await fetch(fiveLetterWordsFilePath)
+  const fiveLetterWords: string[] = await response.json()
 
-import * as ReactDOM from 'react-dom'
-import history from './components/history'
-import router from './components/router'
-import routes from './components/routes'
+  console.log(`There are a total of ${fiveLetterWords.length} words in the pool`)
 
-const container = document.getElementById('root')
-function renderComponent(component) {
-  ReactDOM.render(component, container)
+  const game = new HangmanGameManager(fiveLetterWords)
+  const player = new HangmanGamePlayer(game)
+
+  player.playGame()
 }
-function render(location) {
-  router.resolve(routes, location)
-    .then(renderComponent)
-    .catch(error => router.resolve(routes, { ...location, error })
-    .then(renderComponent))
-}
-render(history.location) // render the current URL
-history.listen(render)               // render subsequent URLs
+
+startApp()
+

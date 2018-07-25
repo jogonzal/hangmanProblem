@@ -1,0 +1,22 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    //Use the local TypeScript (currently v2.0) installation:
+    "editor.detectIndentation": false,
+    // Insert spaces when pressing Tab!
+    "editor.insertSpaces": true,
+    // set tab size to 2 spaces
+    "editor.tabSize": 2,
+    // Unimportant stuff
+    "files.exclude": {
+        "**/.awcache": true,
+        "**/.nyc_output": true,
+        "**/.git": true,
+        "**/build": true,
+        "**/node_modules/": true
+    },
+    // Associate file endings
+    "files.associations": {
+        "*.css": "postcss",
+        "*.hb": "handlebars"
+    }
+}

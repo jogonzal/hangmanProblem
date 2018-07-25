@@ -30,10 +30,9 @@
     "lint:ts": "tslint './src/**/*.ts*' --format stylish --force",
     "lint:sass": "stylelint ./src/**/*.scss",
     "start": "npm run start-dev",
-    "start-dev": "webpack-dev-server --config=configs/webpack/dev.js",
-    "start-prod": "npm run build-local-prod && node express.js",
-    "start-prod2": "webpack-dev-server --config=configs/webpack/localprod.js",
-    "test": "jest --coverage --config=configs/jest.json"
+    "start:dev": "webpack-dev-server --config=configs/webpack/dev.js",
+    "start:prod": "npm run build-local-prod && node express.js",
+    "start-prod2": "webpack-dev-server --config=configs/webpack/localprod.js"
   },
   "devDependencies": {
     "@types/history": "^4.6.2",
