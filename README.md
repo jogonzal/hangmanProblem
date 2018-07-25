@@ -9,7 +9,7 @@ Input: Number of letters, entire corpus of possible words, positions guessed so 
 2. Browse to localhost:8080
 3. That's it! Open the browser window, and you'll see somethign like this:
 
-
+![Sample image](/SampleConsoleOutput.png)
 
 ## So... how does this work?
 
