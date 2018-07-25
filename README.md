@@ -18,6 +18,8 @@ Take a look at HangmanGamePlayer.ts - this is the only file you'll change, speci
 
 A simple implementation that simply guesses a, b, c... until winning or losing is available. Note that this implementation has much room for improvement and doesn't make use of any information like word length, word pool, or which positions of the word it has guessed.
 
+If you're interested in learning more on how the game manager work, take a look at HangmanGameManager.ts. The manager simply takes in the guess, calculates wether it is correct or not, and keeps track of correctly guessed characters. The pool of words was obtained from here: <http://www.allscrabblewords.com/5-letter-words/>
+
 ### Input for HangmanGamePlayer.ts
 
 1. Number of letters in the word to guess (this.hangmanGame.wordLength)
