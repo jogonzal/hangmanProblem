@@ -13,7 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: ['babel-loader', 'awesome-typescript-loader'],
+        use: ['awesome-typescript-loader'],
       },
       {
         test: /\.css$/,
