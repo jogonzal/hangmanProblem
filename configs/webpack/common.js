@@ -1,7 +1,6 @@
 // shared config (dev and prod)
 const {resolve} = require('path');
 const {CheckerPlugin} = require('awesome-typescript-loader');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
@@ -12,11 +11,6 @@ module.exports = {
   context: resolve(__dirname, '../../src'),
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        use: ['babel-loader', 'source-map-loader'],
-        exclude: /node_modules/,
-      },
       {
         test: /\.tsx?$/,
         use: ['babel-loader', 'awesome-typescript-loader'],
@@ -46,7 +40,6 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
-    new StyleLintPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),

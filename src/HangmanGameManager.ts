@@ -31,7 +31,7 @@ export default class HangmanGameManager {
   public guessCharacter(guessedCharacter: string): HangmanResult {
     const result = this.guessCharacterPrivate(guessedCharacter)
     console.log(`[HangmanGameManager] User guessed '${guessedCharacter}'. Result: ${HangmanResult[result]} TotalFailedGuesses: ${this.totalFailedGuesses}.`)
-    console.log(this.positionsGuessedSoFar)
+    console.log(`Positions so far:`, this.positionsGuessedSoFar)
 
     return result
   }
